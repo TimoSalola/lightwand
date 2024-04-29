@@ -40,14 +40,33 @@ Breadboards are OK for early prototyping, but signal issues due to multiple poor
 Online stores sell USB C ports with 4 pre soldered pinds. USB C is love, USB C is life and these can be used for all kinds of purposes as long as they are wired correctly. 
 
 ## LED wand
-The wand is just a 1m long s9822 strip inside a 125cm long aluminium profile with a USB C port soldered to the 4 pins of the led strip. USB port is held in place by strong epoxy.
+The wand is just a 1m long sk9822 strip inside a 125cm long aluminium profile with a USB C port soldered to the 4 pins of the led strip. USB port is held in place by strong epoxy.
 
 ## Improvements on the "reference design"
 The reference design is good but by placing components more optimally, some space could be saved and the case size could be smaller. Current size is not a problem for a separate control unit, but the controller could be integrated with the light painting wand. Perhaps the control unit could work as a handle that could be moved along the led profile? A coiled USB cable for controller to wand power/signal transfer could make this a really neat package. This would be easier if the controller was smaller.
 
 Software does not contain support for drawing direction adjustments. Thus all images on the SD card have to be oriented properly. This could be implemented in software.
 
-White balance adjustments are a real hack as fastled doesn't have WB adjustments, this could certainly be improved on. 
+White balance adjustments are a hack as fastled doesn't have WB adjustments, this could certainly be improved on.
+
+
+## Control unit circuit board design
+The design I used splits the controller into 3 components. A motherboard for USB C ports and power/data transfer between teensy and the user interface board. This simplifies the design significantly.
+### Teensy pins connected to motherboard
+- SCL and SDA for UI board display.
+- 5V and ground for power.
+- 2 digital pins for wand clock and data signals.
+- 1 analog pin for UI board analog button system monitoring.
+
+### UI board pins connected to motherboard
+- 5V and ground for power.
+- SCL and SDA for display data.
+- 1 pin for button voltage to teensy.
+
+### Motherboard connections
+- Common ground and 5V for UI board, teensy and USB C ports.
+- SCL and SDA between UI board and teensy.
+- digital and clock pin from teensy to led wand output USB port.
 
 
 ## Power input and stability
