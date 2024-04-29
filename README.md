@@ -64,7 +64,7 @@ With 1m wands:
 
 ## Photography tips
 Iso 100, f1.8, 8 sec exposure and a 3 stop ND filter has proven to be a good starting point when taking light painting shots. Without nd filter, ambient light overexposes shots at wide apertures and this is fairly limiting. Variable nd filters are worth considering, but anything darker than nd8(3 stop) is unlikely to be useful.
-![]([https://github.com/TimoSalola/lightwand/blob/main/DSC00034_01.jpg](https://github.com/TimoSalola/lightwand/blob/main/DSC00034_01.jpg))
+![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](https://github.com/TimoSalola/lightwand/blob/main/lightwandtest.png)
 
 
 You can remove the led diffuser for extra brightness whenever needed. Depending on pixel density, type and so on this might even look good. 
